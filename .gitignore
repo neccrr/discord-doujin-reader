@@ -1,6 +1,7 @@
 # User-specific stuff
 .idea/
 .fleet/
+config.js
 
 # Node JS Modules
 node_modules

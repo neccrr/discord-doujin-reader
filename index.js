@@ -47,7 +47,7 @@ client.events = new Collection();
 
 module.exports = client;
 
-["prefix", "application_commands", "events"].forEach((file) => {
+["PrefixHandler", "ApplicationCommandHandler", "EventHandler", "CrashHandler"].forEach((file) => {
   require(`./handlers/${file}`)(client, config);
 });
 
@@ -58,9 +58,3 @@ client.login(AuthenticationToken)
     console.error("[ERROR] Error from Discord API:" + err);
     return process.exit();
   });
-
-// Handle errors:
-process.on('unhandledRejection', async (err, promise) => {
-  console.error(`[ANTI-CRASH] Unhandled Rejection: ${err}`.red);
-  console.error(promise);
-});
