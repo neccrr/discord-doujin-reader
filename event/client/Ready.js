@@ -2,7 +2,7 @@ const client = require("../../index");
 const { Events } = require('discord.js');
 
 module.exports = {
-    name: "onReady.js"
+    name: "Ready.js"
 };
 
 client.once(Events.ClientReady, async () => {

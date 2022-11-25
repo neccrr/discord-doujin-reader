@@ -1,5 +1,5 @@
 const { Client, Partials, Collection, GatewayIntentBits } = require('discord.js');
-const config = require('./config/config');
+const config = require('./config/Config');
 
 // Creating a new client:
 const client = new Client({

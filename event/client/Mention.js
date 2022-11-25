@@ -2,7 +2,7 @@ const { EmbedBuilder, Events } = require("discord.js");
 const client = require("../../index");
 
 module.exports = {
-    name: "onMention.js"
+    name: "Mention.js"
 };
 
 client.on(Events.MessageCreate, async (message) => {
