@@ -48,13 +48,13 @@ client.events = new Collection();
 module.exports = client;
 
 ["PrefixHandler", "ApplicationCommandHandler", "EventHandler", "CrashHandler"].forEach((file) => {
-  require(`./handlers/${file}`)(client, config);
+  require(`./handler/${file}`);
 });
 
 // Login to the bot:
 client.login(AuthenticationToken)
   .catch((err) => {
-    console.error("[ERROR] Something went wrong while connecting to your bot...");
-    console.error("[ERROR] Error from Discord API:" + err);
+    console.error("[ERROR] Something went wrong while connecting to your bot...".red);
+    console.error("[ERROR] Error from Discord API:" + err.red);
     return process.exit();
   });

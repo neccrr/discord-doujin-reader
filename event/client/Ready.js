@@ -1,4 +1,4 @@
-const client = require("../../index");
+const client = require("../../DoujinReader");
 const { Events } = require('discord.js');
 
 module.exports = {

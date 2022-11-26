@@ -2,19 +2,20 @@
   "name": "DoujinshiReader",
   "version": "0.0.1",
   "description": "doujinshi reader",
-  "main": "index.js",
+  "main": "DoujinReader.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node DoujinReader.js"
   },
   "keywords": [],
   "author": "Necro",
   "license": "ISC",
   "dependencies": {
+    "better-sqlite3": "^8.0.0",
     "cpu-stat": "^2.0.1",
-    "discord-api-types": "^0.36.2",
-    "discord.js": "^14.3.0",
+    "discord.js": "^14.6.0",
     "moment": "^2.29.4",
     "moment-duration-format": "^2.3.2",
-    "node-fetch": "^2.6.7"
+    "pretty-ms": "^6.0.0",
+    "quick.db": "^9.0.6"
   }
 }

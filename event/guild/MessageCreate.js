@@ -1,6 +1,6 @@
-const { EmbedBuilder, PermissionsBitField, codeBlock } = require("discord.js");
-const client = require("../../index");
-const config = require("../../config/config.js");
+const { EmbedBuilder, PermissionsBitField } = require("discord.js");
+const client = require("../../DoujinReader");
+const config = require("../../config/Config.js");
 const { QuickDB } = require("quick.db");
 const db = new QuickDB();
 
@@ -20,7 +20,7 @@ client.on('messageCreate', async message => {
 
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const cmd = args.shift().toLowerCase();
-  if (cmd.length == 0) return;
+  if (cmd.length === 0) return;
 
   let command = client.prefix_commands.get(cmd);
 
@@ -35,9 +35,9 @@ client.on('messageCreate', async message => {
             .setColor("Red")
         ]
       })
-    };
+    }
 
-    if (command.owner, command.owner == true) {
+    if (command.owner, command.owner === true) {
       if (!config.Users.OWNERS) return;
 
       const allowedUsers = []; // New Array.
@@ -55,12 +55,12 @@ client.on('messageCreate', async message => {
             .setColor("Red")
         ]
       })
-    };
+    }
 
     try {
       command.run(client, message, args, prefix, config, db);
     } catch (error) {
       console.error(error);
-    };
+    }
   }
 });

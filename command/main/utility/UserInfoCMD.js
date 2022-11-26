@@ -4,7 +4,7 @@ const ms = require('pretty-ms'); // npm i pretty-ms@6
 module.exports = {
     name: "User Info",
     type: 2,
-    run: async (client, interaction, config, db) => {
+    run: async (client, interaction) => {
 
         const user = interaction.guild.members.cache.get(interaction.targetId);
 

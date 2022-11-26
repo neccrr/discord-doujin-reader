@@ -1,6 +1,6 @@
 const { EmbedBuilder } = require("discord.js");
-const client = require("../../index");
-const config = require("../../config/config.js");
+const client = require("../../DoujinReader");
+const config = require("../../config/Config.js");
 const { QuickDB } = require("quick.db");
 const db = new QuickDB();
 
@@ -18,8 +18,8 @@ client.on('interactionCreate', async (interaction) => {
             command.run(client, interaction, config, db);
         } catch (e) {
             console.error(e)
-        };
-    };
+        }
+    }
 
     if (interaction.isUserContextMenuCommand()) { // User:
         const command = client.user_commands.get(interaction.commandName);
@@ -30,8 +30,8 @@ client.on('interactionCreate', async (interaction) => {
             command.run(client, interaction, config, db);
         } catch (e) {
             console.error(e)
-        };
-    };
+        }
+    }
 
     if (interaction.isMessageContextMenuCommand()) { // Message:
         const command = client.message_commands.get(interaction.commandName);
@@ -42,8 +42,8 @@ client.on('interactionCreate', async (interaction) => {
             command.run(client, interaction, config, db);
         } catch (e) {
             console.error(e)
-        };
-    };
+        }
+    }
 
     if (interaction.isModalSubmit()) { // Modals:
         const modal = client.modals.get(interaction.customId);
@@ -61,7 +61,7 @@ client.on('interactionCreate', async (interaction) => {
             modal.run(client, interaction, config, db);
         } catch (e) {
             console.error(e)
-        };
+        }
     }
 });
 

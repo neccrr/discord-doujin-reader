@@ -1,5 +1,4 @@
-const client = require("../index");
-const { PermissionsBitField, Routes, REST, User } = require('discord.js');
+const { PermissionsBitField, Routes, REST } = require('discord.js');
 const fs = require("fs");
 
 module.exports = (client, config) => {
@@ -8,12 +7,12 @@ module.exports = (client, config) => {
   let commands = [];
 
   // Slash commands handler:
-  fs.readdirSync('./commands/slash/').forEach((dir) => {
+  fs.readdirSync('./command/main/').forEach((dir) => {
     console.log('[!] Started loading slash commands...'.yellow);
-    const SlashCommands = fs.readdirSync(`./commands/slash/${dir}`).filter((file) => file.endsWith('.js'));
+    const SlashCommands = fs.readdirSync(`./command/main/${dir}`).filter((file) => file.endsWith('.js'));
 
     for (let file of SlashCommands) {
-      let pull = require(`../commands/slash/${dir}/${file}`);
+      let pull = require(`../command/main/${dir}/${file}`);
 
       if (pull.name, pull.description, pull.type === 1) {
         client.slash_commands.set(pull.name, pull);
@@ -37,7 +36,7 @@ module.exports = (client, config) => {
 
   // Registering all the application commands:
   if (!config.Client.ID) {
-    console.log("[CRASH] You need to provide your bot ID in config.js!".red + "\n");
+    console.log("[CRASH] You need to provide your bot ID in Config.js!".red + "\n");
     return process.exit();
   }
 

@@ -2,6 +2,7 @@
 .idea/
 .fleet/
 config.js
+Config.js
 
 # Node JS Modules
 node_modules

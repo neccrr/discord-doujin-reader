@@ -1,14 +1,13 @@
 const fs = require("fs");
-const colors = require("colors");
 
 module.exports = (client) => {
     console.log("=======================[ EVENTS HANDLER ]=======================".blue);
 
-  fs.readdirSync('./events/').forEach(dir => {
-		const commands = fs.readdirSync(`./events/${dir}`).filter(file => file.endsWith('.js'));
+  fs.readdirSync('./event/').forEach(dir => {
+		const commands = fs.readdirSync(`./event/${dir}`).filter(file => file.endsWith('.js'));
 		for (let file of commands) {
 
-			let pull = require(`../events/${dir}/${file}`);
+			let pull = require(`../event/${dir}/${file}`);
 			if (pull.name) {
 				client.events.set(pull.name, pull);
 				console.log(`[HANDLER - EVENTS] Loaded a file: ${pull.name}`.brightGreen)
