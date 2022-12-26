@@ -1,21 +1,20 @@
 {
-  "name": "DoujinshiReader",
+  "name": "DoujinReader",
   "version": "0.0.1",
-  "description": "doujinshi reader",
-  "main": "DoujinReader.js",
+  "description": "doujin reader",
+  "main": "index.js",
   "scripts": {
-    "start": "node DoujinReader.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "Necro",
   "license": "ISC",
   "dependencies": {
-    "better-sqlite3": "^8.0.0",
+    "colors": "^1.4.0",
     "cpu-stat": "^2.0.1",
     "discord.js": "^14.6.0",
     "moment": "^2.29.4",
     "moment-duration-format": "^2.3.2",
-    "pretty-ms": "^6.0.0",
-    "quick.db": "^9.0.6"
+    "pretty-ms": "^6.0.0"
   }
 }

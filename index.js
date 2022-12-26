@@ -1,5 +1,6 @@
 const { Client, Partials, Collection, GatewayIntentBits } = require('discord.js');
-const config = require('./config/Config');
+const config = require('./config/config');
+const colors = require("colors");
 
 // Creating a new client:
 const client = new Client({
@@ -27,6 +28,8 @@ const client = new Client({
   }
 });
 
+//client.on('debug', console.log)
+
 // Host the bot:
 require('http').createServer((req, res) => res.end('Ready.')).listen(3000);
 
@@ -38,17 +41,14 @@ if (!AuthenticationToken) {
 }
 
 // Handler:
-client.prefix_commands = new Collection();
-client.slash_commands = new Collection();
-client.user_commands = new Collection();
-client.message_commands = new Collection();
-client.modals = new Collection();
-client.events = new Collection();
+client.ApplicationCommandHandler = new Collection();
+client.EventHandler = new Collection();
+client.CrashHandler = new Collection();
 
 module.exports = client;
 
-["PrefixHandler", "ApplicationCommandHandler", "EventHandler", "CrashHandler"].forEach((file) => {
-  require(`./handler/${file}`);
+["ApplicationCommandHandler", "EventHandler", "CrashHandler"].forEach((file) => {
+  require(`./handler/${file}`)(client, config);
 });
 
 // Login to the bot:
@@ -58,3 +58,7 @@ client.login(AuthenticationToken)
     console.error("[ERROR] Error from Discord API:" + err.red);
     return process.exit();
   });
+
+if (config.Debug) {
+    client.on('debug', console.log);
+}

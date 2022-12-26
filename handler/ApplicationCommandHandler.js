@@ -1,5 +1,6 @@
 const { PermissionsBitField, Routes, REST } = require('discord.js');
 const fs = require("fs");
+const colors = require("colors");
 
 module.exports = (client, config) => {
     console.log("=================[ APPLICATION COMMAND HANDLER ]================".blue);
@@ -8,22 +9,21 @@ module.exports = (client, config) => {
 
   // Slash commands handler:
   fs.readdirSync('./command/main/').forEach((dir) => {
-    console.log('[!] Started loading slash commands...'.yellow);
+    console.log('[HANDLER] Starting loading slash commands...'.yellow);
     const SlashCommands = fs.readdirSync(`./command/main/${dir}`).filter((file) => file.endsWith('.js'));
 
     for (let file of SlashCommands) {
       let pull = require(`../command/main/${dir}/${file}`);
 
-      if (pull.name, pull.description, pull.type === 1) {
-        client.slash_commands.set(pull.name, pull);
-        console.log(`[HANDLER - SLASH] Loaded a file: ${pull.name} (#${client.slash_commands.size})`.brightGreen);
+      if (pull.name, pull.description, pull.type == 1) {
+        client.ApplicationCommandHandler.set(pull.name, pull);
+        console.log(`[HANDLER - SLASH] Loaded a file: ${pull.name} (#${client.ApplicationCommandHandler.size})`.brightGreen);
 
         commands.push({
           name: pull.name,
           description: pull.description,
           type: pull.type || 1,
           options: pull.options ? pull.options : null,
-          aliases: pull.aliases ? pull.aliases : null,
           default_permission: pull.permissions.DEFAULT_PERMISSIONS ? pull.permissions.DEFAULT_PERMISSIONS : null,
           default_member_permissions: pull.permissions.DEFAULT_MEMBER_PERMISSIONS ? PermissionsBitField.resolve(pull.permissions.DEFAULT_MEMBER_PERMISSIONS).toString() : null
         });
@@ -43,7 +43,7 @@ module.exports = (client, config) => {
   const rest = new REST({ version: '10' }).setToken(config.Client.TOKEN || process.env.TOKEN);
 
   (async () => {
-    console.log('[HANDLER] Started registering all the application commands.'.yellow);
+    console.log('[HANDLER] Starting registering all the application commands.'.yellow);
 
     try {
       await rest.put(
@@ -51,7 +51,7 @@ module.exports = (client, config) => {
         { body: commands }
       );
 
-      console.log('[HANDLER] Successfully registered all the application commands.'.brightGreen);
+      console.log('[HANDLER] Successfully registered all the application commands.'.yellow);
     } catch (err) {
       console.log(err);
     }

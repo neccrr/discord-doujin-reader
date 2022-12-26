@@ -1,5 +1,5 @@
 const { EmbedBuilder, Events } = require("discord.js");
-const client = require("../../DoujinReader");
+const client = require("../../index");
 
 module.exports = {
     name: "Mention.js"

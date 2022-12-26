@@ -2,8 +2,12 @@ const { EmbedBuilder } = require('discord.js');
 const ms = require('pretty-ms'); // npm i pretty-ms@6
 
 module.exports = {
-    name: "User Info",
-    type: 2,
+    name: "userinfo",
+    description: "Get user's information",
+    type: 1,
+    permissions: {
+        DEFAULT_MEMBER_PERMISSIONS: "SendMessages"
+    },
     run: async (client, interaction) => {
 
         const user = interaction.guild.members.cache.get(interaction.targetId);

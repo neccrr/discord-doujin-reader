@@ -1,4 +1,4 @@
-const { EmbedBuilder, Version } = require("discord.js");
+const { EmbedBuilder } = require("discord.js");
 const cpuStat = require("cpu-stat");
 const moment = require("moment");
 require("moment-duration-format");
@@ -8,7 +8,6 @@ module.exports = {
     description: "Send bot's stats to user.",
     type: 1,
     options: [],
-    aliases: ["about", "ping", "info"],
     permissions: {
         DEFAULT_MEMBER_PERMISSIONS: "SendMessages"
     },
