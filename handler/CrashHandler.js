@@ -10,7 +10,7 @@ module.exports = (client) => {
 
         webhook.send({
             content: '<@715165927762559038>',
-            username: 'Crash Reporter',
+            username: `${client.user.username} Crash Reporter`,
             avatarURL: 'https://cdn.discordapp.com/attachments/812146714105610250/1056781964520210462/Screenshot_20221221_194855_Instagram.png',
             embeds: [
                 new EmbedBuilder()
