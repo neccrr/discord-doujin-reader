@@ -7,7 +7,6 @@ module.exports = {
     name: "stats",
     description: "Send bot's stats to user.",
     type: 1,
-    options: [],
     permissions: {
         DEFAULT_MEMBER_PERMISSIONS: "SendMessages"
     },

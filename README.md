@@ -1,3 +1,2 @@
-# discord-doujin-reader (Unfinished niga)
+# discord-doujin-reader (W.I.P)
 Read doujin on discord
-

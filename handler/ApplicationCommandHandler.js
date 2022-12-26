@@ -15,7 +15,7 @@ module.exports = (client, config) => {
     for (let file of SlashCommands) {
       let pull = require(`../command/main/${dir}/${file}`);
 
-      if (pull.name, pull.description, pull.type == 1) {
+      if (pull.name, pull.description, pull.type === 1) {
         client.ApplicationCommandHandler.set(pull.name, pull);
         console.log(`[HANDLER - SLASH] Loaded a file: ${pull.name} (#${client.ApplicationCommandHandler.size})`.brightGreen);
 

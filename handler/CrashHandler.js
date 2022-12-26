@@ -14,8 +14,8 @@ module.exports = (client) => {
             avatarURL: 'https://cdn.discordapp.com/attachments/812146714105610250/1056781964520210462/Screenshot_20221221_194855_Instagram.png',
             embeds: [
                 new EmbedBuilder()
-                .setTitle(`Crash Report - 0x${Date.now()}${String.fromCharCode(65 + Math.floor(Math.random() * 26))}`)
-                .setColor('Random')
+                .setTitle(`Crash Report - 0x${Date.now().toString().slice(0, 7)}${String.fromCharCode(65 + Math.floor(Math.random() * 26))}`)
+                .setColor('Red')
                 .setDescription(`${err.stack}`)
             ]
         });

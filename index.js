@@ -28,10 +28,8 @@ const client = new Client({
   }
 });
 
-//client.on('debug', console.log)
-
-// Host the bot:
-require('http').createServer((req, res) => res.end('Ready.')).listen(3000);
+// Host the bot: (For replit)
+// require('http').createServer((req, res) => res.end('Ready.')).listen(3000);
 
 // Getting the bot token:
 const AuthenticationToken = process.env.TOKEN || config.Client.TOKEN;
