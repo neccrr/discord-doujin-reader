@@ -1,6 +1,8 @@
+require('dotenv').config();
+
 module.exports = {
 
-    Prefix: process.env.BOT_PREFIX_ENV, // YOUR BOT PREFIX.
+    Prefix: "n?", // YOUR BOT PREFIX.
 
     Users: {
         OWNERS: process.env.BOT_OWNERS_ENV.split(' ') // THE BOT OWNERS ID.
