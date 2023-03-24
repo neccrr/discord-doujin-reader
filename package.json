@@ -4,7 +4,8 @@
   "description": "doujin reader",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "npm install && npm start"
   },
   "keywords": [],
   "author": "Necro",
@@ -14,6 +15,7 @@
     "cpu-stat": "^2.0.1",
     "discord.js": "^14.6.0",
     "moment": "^2.29.4",
-    "moment-duration-format": "^2.3.2"
+    "moment-duration-format": "^2.3.2",
+    "nhentai-api": "^3.4.3"
   }
 }

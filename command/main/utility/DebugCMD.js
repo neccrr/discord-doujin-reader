@@ -13,8 +13,8 @@ module.exports = {
                 {
                     name: "type",
                     description: "The type of error you want to trigger.",
-                    required: true,
                     type: 3,
+                    required: true,
                     choices: [
                         {
                             name: "ReferenceError",
@@ -34,11 +34,6 @@ module.exports = {
                     ]
                 }
             ],
-        },
-        {
-            name: "test",
-            description: "e",
-            type: 1,
         }
     ],
     permissions: {

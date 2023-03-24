@@ -1,14 +1,14 @@
 module.exports = {
 
-    Prefix: "n?", // YOUR BOT PREFIX.
+    Prefix: process.env.BOT_PREFIX_ENV, // YOUR BOT PREFIX.
 
     Users: {
-        OWNERS: ["owner1", "owner2"] // THE BOT OWNERS ID.
+        OWNERS: process.env.BOT_OWNERS_ENV.split(' ') // THE BOT OWNERS ID.
     },
 
     Client: {
-        TOKEN: "token", // YOUR BOT TOKEN. (USE THIS ONLY IN VSCODE)
-        ID: "id" // YOUR BOT ID.
+        TOKEN: process.env.BOT_TOKEN_ENV, // YOUR BOT TOKEN. (USE THIS ONLY IN VSCODE)
+        ID: process.env.BOT_ID_ENV // YOUR BOT ID.
     }
 
 }
